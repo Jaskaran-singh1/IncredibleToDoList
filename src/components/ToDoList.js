@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, View, Text, Pressable, StyleSheet } from "react-native";
 
-const ToDoList = ({ tasks }) => {
+export default function ToDoList({ tasks }) {
   return (
     <ScrollView>
       {tasks.map((item) => {
@@ -15,7 +15,7 @@ const ToDoList = ({ tasks }) => {
       })}
     </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   task: {
@@ -30,5 +30,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default ToDoList;

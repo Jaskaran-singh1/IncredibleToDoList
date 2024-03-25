@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 
-const ToDoForm = ({ addTask }) => {
+export default function ToDoForm({ addTask }) {
   const [taskText, setTaskText] = useState("");
 
   return (
@@ -10,11 +10,12 @@ const ToDoForm = ({ addTask }) => {
         style={styles.input}
         placeholder="Add a new task..."
         onChangeText={(text) => setTaskText(text)}
+        value={taskText}
       />
       <Button title="Add" onPress={() => addTask(taskText)} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   form: {
@@ -33,5 +34,3 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
-
-export default ToDoForm;
